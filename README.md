@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+#  React Toastify   Simple  Project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Image not found ](./toastify-img.gif)
 
-## Available Scripts
 
-In the project directory, you can run:
+> ### React-toastify  Code .... 
 
-### `yarn start`
+```javascript 
+import { Button, Stack, Container } from '@mui/material';
+import React from 'react';
+import { ToastContainer, toast, Slide, Zoom, Flip, Bounce } from 'react-toastify';
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+import 'react-toastify/dist/ReactToastify.css';
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+const ReactToaster = () => {
 
-### `yarn test`
+    const defaultMessage = () => {
+        toast("Default Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true,
+            transition: Slide
+        });
+    }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    const successtMessage = () => {
+        toast.success("Success Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true,
+            transition: Zoom
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        });
+    }
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    const infotMessage = () => {
+        toast.info("Info Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true,
+            transition: Bounce
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        });
+    }
 
-### `yarn eject`
+    const errorMessage = () => {
+        toast.error("Error  Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true,
+            transition: Flip
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+        });
+    }
+    const darkMessage = () => {
+        toast.dark("Error  Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true
+        });
+    }
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    const warnMessage = () => {
+        toast.warn("Update  Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true
+        });
+    }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    const successThemeMessage = () => {
+        toast.success("Update  Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true,
+            theme: "colored"
+        });
+    }
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    const errorThemeMessage = () => {
+        toast.error("Update  Toastify Message  !", {
+            position: 'top-right',
+            autoClose: 2000, // time in milli secondes
+            draggable: true,
+            theme: "colored"
+        });
+    }
 
-## Learn More
+    return (
+        <Container>
+            <Stack spacing={2} sx={{ m: 2 }} direction="row" flexWrap="wrap">
+                <ToastContainer />
+                <Button variant="contained" onClick={() => defaultMessage()} color="action">Default  Slide  toastify </Button>
+                <Button variant="contained" onClick={successtMessage}>Success Zoom  toastify </Button>
+                <Button variant="contained" onClick={infotMessage} color="info">Info Bounce  toastify </Button>
+                <Button variant="contained" onClick={errorMessage} color="error">Error Flip toastify </Button>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+            </Stack>
+            <Stack spacing={2} sx={{ m: 2 }} direction="row" flexWrap="wrap">
+                <Button variant="contained" onClick={warnMessage} color="warning">Warning   toastify </Button>
+                <Button variant="contained" onClick={darkMessage} style={{ background: "#000" }}>Error  toastify </Button>
+            </Stack>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+            <Stack spacing={2} sx={{ m: 5 }} direction="row" flexWrap="wrap">
+                <Button variant="contained" onClick={successThemeMessage} color="success">Success Theme    toastify </Button>
+                <Button variant="contained" onClick={errorThemeMessage} color="error">Error   Theme   toastify </Button>
+            </Stack>
+        </Container>
+    );
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default ReactToaster;
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

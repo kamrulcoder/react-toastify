@@ -79,10 +79,6 @@ const ReactToaster = () => {
         });
     }
 
-
-
-
-
     return (
         <Container>
             <Stack spacing={2} sx={{ m: 2 }} direction="row" flexWrap="wrap">
